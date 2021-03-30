@@ -11,7 +11,7 @@ function ticTacWin(tictacBoard) {
     !tictacBoard[0].length ||
     tictacBoard.length !== tictacBoard[0].length
   ) {
-    throw 'Tic Tac Toe board must be squared and cannot be empty';
+    throw new Error('Tic Tac Toe board must be squared and cannot be empty');
   }
   const size = tictacBoard.length;
   let winnerByRows = [];
@@ -81,17 +81,4 @@ function ticTacWin(tictacBoard) {
   return `It's a draw!`;
 }
 
-let board = [
-  ['x', 'o', 'o'],
-  ['o', 'x', 'x'],
-  ['o', 'x', 'o'],
-];
-console.log(ticTacWin(board));
-let board2 = [
-  ['x', 'x', 'x', 'x'],
-  ['x', 'o', 'o', 'o'],
-  ['o', 'o', 'x', 'o'],
-  ['o', 'o', 'x', 'x'],
-];
-console.log(ticTacWin(board2));
-// console.log(ticTacWin([])); // Throws error
+module.exports = ticTacWin;
